@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图形绘制</title>
+  <style>
+    img {
+      width: 800px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <img id="tulip" src="./image/sishen.jpg" alt="死神" >
+  <canvas id="canvas" width="800" height="400" >
+  <script>
+   var canvas = document.getElementById("canvas");
+   var context = canvas.getContext("2d");
+  //  var img = document.getElementById("tulip")
+   const img = new Image()
+   img.src = "./image/sishen.jpg"
+   context.drawImage(img,10,10);
+   /**等图片资源加载完成后，才在 Canvas 上进行绘制渲染*/
+   img.onload = function () {
+    context.drawImage(img, 0, 0);
+    }
+
+  </script>
+</body>
+</html>
